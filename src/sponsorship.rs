@@ -210,7 +210,7 @@ impl SponsorshipValidator {
         );
         
         let store = self.object_store.read().await;
-        let fuel_object = store
+        let _fuel_object = store
             .get_object(&fuel_payment.id)
             .map_err(|e| Error::Storage(format!("Failed to get fuel object: {}", e)))?
             .ok_or_else(|| {
@@ -277,7 +277,7 @@ impl SponsorshipValidator {
             return Err(Error::SponsorSignatureMissing);
         }
         
-        let sponsor_signature = &transaction.signatures[1];
+        let _sponsor_signature = &transaction.signatures[1];
         
         // In a real implementation, we would:
         // 1. Get the sponsor's public key from their address

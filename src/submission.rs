@@ -147,7 +147,7 @@ impl SubmissionHandler {
         
         // Get the transaction digest for signature verification
         let digest = transaction.digest();
-        let message = digest.as_bytes();
+        let _message = digest.as_bytes();
         
         // Verify sender signature (first signature)
         if transaction.signatures.is_empty() {
@@ -156,7 +156,7 @@ impl SubmissionHandler {
             ));
         }
         
-        let sender_signature = &transaction.signatures[0];
+        let _sender_signature = &transaction.signatures[0];
         
         // For now, we'll skip actual signature verification since we need the public key
         // In a real implementation, we would:
@@ -172,7 +172,7 @@ impl SubmissionHandler {
                 return Err(Error::SponsorSignatureMissing);
             }
             
-            let sponsor_signature = &transaction.signatures[1];
+            let _sponsor_signature = &transaction.signatures[1];
             
             // Similar to above, we would verify the sponsor's signature here
             debug!("Sponsor signature verified");
@@ -271,7 +271,8 @@ mod tests {
     use super::*;
     use silver_core::{
         Command, Identifier, ObjectID, ObjectRef, SequenceNumber, SignatureScheme,
-        TransactionData, TransactionKind,
+        TransactionData, TransactionKind, SilverAddress, TransactionExpiration, Signature,
+        TransactionDigest,
     };
     use silver_storage::RocksDatabase;
     use tempfile::TempDir;

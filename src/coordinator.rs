@@ -56,6 +56,7 @@ pub struct TransactionCoordinator {
     sponsorship_validator: SponsorshipValidator,
     
     /// Object store
+    #[allow(dead_code)]
     object_store: Arc<RwLock<ObjectStore>>,
     
     /// Channel for sending transactions to consensus
@@ -125,7 +126,7 @@ impl TransactionCoordinator {
         // Step 3: For sponsored transactions, validate sponsorship
         if submission_result.is_sponsored {
             match self.sponsorship_validator.validate_sponsorship(&transaction).await {
-                Ok(sponsorship_info) => {
+                Ok(_sponsorship_info) => {
                     debug!("Sponsorship validated for transaction {}", digest);
                     // Store sponsorship info for later refund processing
                     // In a real implementation, we would store this in a separate map
