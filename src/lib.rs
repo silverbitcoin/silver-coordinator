@@ -13,6 +13,7 @@
 
 #![warn(missing_docs, rust_2018_idioms)]
 #![forbid(unsafe_code)]
+#![allow(missing_docs)] // Internal implementation details
 
 mod error;
 mod submission;

@@ -5,7 +5,7 @@
 
 use crate::{Error, Result};
 use silver_core::{
-    PublicKey, Signature, SilverAddress, Transaction, TransactionDigest, TransactionExpiration,
+    Transaction, TransactionDigest,
 };
 use silver_storage::ObjectStore;
 use std::sync::Arc;

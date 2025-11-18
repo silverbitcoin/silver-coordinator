@@ -3,8 +3,7 @@
 //! Coordinates transaction flow from submission through consensus to execution.
 
 use crate::{
-    Error, LifecycleManager, Result, SponsorshipInfo, SponsorshipValidator, SubmissionHandler,
-    SubmissionResult, TransactionStatus,
+    Error, LifecycleManager, Result, SponsorshipValidator, SubmissionHandler, TransactionStatus,
 };
 use silver_core::{Transaction, TransactionDigest};
 use silver_storage::ObjectStore;

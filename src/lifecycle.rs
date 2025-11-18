@@ -6,7 +6,6 @@ use crate::{Error, Result};
 use dashmap::DashMap;
 use silver_core::{TransactionDigest, TransactionExpiration};
 use std::sync::Arc;
-use tokio::sync::RwLock;
 use tracing::{debug, info, warn};
 
 /// Transaction status in the lifecycle
